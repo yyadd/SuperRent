@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_presenter.ReserveRentController">
+   <children>
+      <SplitPane dividerPositions="0.32456140350877194" layoutX="62.0" layoutY="14.0" prefHeight="339.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="233.0">
+               <children>
+                  <VBox layoutX="16.0" layoutY="53.0" prefHeight="493.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="31.0" prefWidth="200.0" spacing="40.0">
+                           <children>
+                              <RadioButton fx:id="carRB" mnemonicParsing="false" text="Car" />
+                              <RadioButton fx:id="truckRB" mnemonicParsing="false" text="Truck" />
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                        <Label layoutX="13.0" layoutY="62.0" text="Location">
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="locationCMB" layoutX="12.0" layoutY="78.0" prefHeight="26.0" prefWidth="200.0" style="-fx-background-image: white;" AnchorPane.leftAnchor="12.0">
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Label layoutX="13.0" layoutY="111.0" text="Vehicle type">
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <ComboBox fx:id="vehicleTypeCMB" layoutX="12.0" layoutY="127.0" prefHeight="26.0" prefWidth="200.0" AnchorPane.leftAnchor="12.0">
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <Label layoutX="13.0" layoutY="156.0" text="From time">
+                           <VBox.margin>
+                              <Insets bottom="4.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <DatePicker fx:id="fromDatePicker" prefHeight="26.0" prefWidth="115.0">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <ComboBox fx:id="fromHourCMB" prefHeight="26.0" prefWidth="88.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </ComboBox>
+                           </children>
+                        </HBox>
+                        <Label text="To time" />
+                        <HBox prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <DatePicker fx:id="toDatePicker" prefHeight="26.0" prefWidth="115.0">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                              <ComboBox fx:id="toHourCMB" prefHeight="26.0" prefWidth="90.0" />
+                           </children>
+                        </HBox>
+                        <Button fx:id="checkAvailabilityButton" mnemonicParsing="false" onAction="#handleCheckAvailability" prefHeight="26.0" prefWidth="134.0" text="Check availability">
+                           <VBox.margin>
+                              <Insets left="40.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Separator>
+                        <Label text="Add equipments">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="equip1Label" alignment="BASELINE_CENTER" prefHeight="16.0" prefWidth="116.0" text="equipment1" />
+                              <ComboBox fx:id="equip1CMB" prefWidth="150.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="32.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="equip2Label" alignment="BASELINE_CENTER" prefHeight="16.0" prefWidth="116.0" text="equipment2" />
+                              <ComboBox fx:id="equip2CMB" prefWidth="150.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Separator prefWidth="200.0" />
+                        <AnchorPane fx:id="customerInfoAP" prefHeight="205.0" prefWidth="245.0">
+                           <children>
+                              <GridPane prefHeight="204.0" prefWidth="245.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="78.6434326171875" minWidth="10.0" prefWidth="43.39949035644531" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="126.47450256347656" minWidth="10.0" prefWidth="120.60050964355469" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="BASELINE_RIGHT" prefHeight="16.0" prefWidth="80.0" text="by phone No." GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label fx:id="confirmCustomerLabel" text="Retrieve customer information" GridPane.columnSpan="2147483647">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="phoneField" prefHeight="26.0" prefWidth="134.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.rowIndex="3" />
+                                    <Label fx:id="foundByPhoneResult" alignment="BASELINE_LEFT" prefHeight="16.0" prefWidth="84.0" text="foundResult" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="byPhoneSubmitButton" mnemonicParsing="false" onAction="#handleSubmitByPhone" text="Check Customer" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <Label alignment="BASELINE_LEFT" prefHeight="16.0" prefWidth="121.0" text="by confirmation No." GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="CNoField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                    <Button fx:id="byCNoSubmitButton" mnemonicParsing="false" onAction="#handleSubmitByCNo" text="Submit" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                    <Button fx:id="registerButton" mnemonicParsing="false" onAction="#handleRegistration" text="Register customer" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
+                                    <Label fx:id="foundByCNoResult" alignment="BASELINE_LEFT" prefHeight="16.0" prefWidth="84.0" text="foundResult2" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="522.0">
+               <children>
+                  <VBox fx:id="summaryVBox" layoutX="30.0" prefHeight="505.0" prefWidth="476.0" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Customer:" GridPane.halignment="LEFT" />
+                              <Label fx:id="usernameLabel" text="username" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Type:" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <Label fx:id="vehicleTypeLabel" text="type" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Plate No: " GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+                              <Label fx:id="plateNoLabel" text="plateNo" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Pickup:" GridPane.halignment="LEFT" GridPane.rowIndex="3" />
+                              <Label fx:id="branchLabel" text="branch" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="From:" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                              <Label fx:id="fromTimeLabel" text="fromTime" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="To:" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2" />
+                              <Label fx:id="toTimeLabel" text="toTime" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label text="Phone:" GridPane.columnIndex="4" GridPane.halignment="LEFT" />
+                              <Label fx:id="phoneLabel" text="phone" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="LEFT">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </Label>
+                              <Label fx:id="showLicenseLabel" text="Driver license: " GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                              <Label fx:id="licenseLabel" text="license" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="System Bold" size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Separator prefWidth="200.0">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin></Separator>
+                        <HBox prefHeight="29.0" prefWidth="485.0">
+                           <children>
+                              <CheckBox fx:id="roadStarCB" mnemonicParsing="false" text="Road Star" />
+                              <CheckBox fx:id="redeem1000CB" mnemonicParsing="false" text="Redeem 1000 points">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                              <CheckBox fx:id="redeem1500CB" mnemonicParsing="false" text="Redeem 1500 points">
+                                 <HBox.margin>
+                                    <Insets left="20.0" />
+                                 </HBox.margin>
+                              </CheckBox>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding></VBox>
+                  <HBox layoutX="165.0" layoutY="545.0" prefHeight="32.0" prefWidth="336.0">
+                     <children>
+                        <Button fx:id="reserveButton" mnemonicParsing="false" onAction="#handleReserve" text="Reserve">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin></Button>
+                        <Button fx:id="selectButton" mnemonicParsing="false" onAction="#handleSelectButton" text="Select vehicle">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="rentButton" mnemonicParsing="false" onAction="#handleRent" text="Rent">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="printButton" mnemonicParsing="false" onAction="#handlePrint" text="Print">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

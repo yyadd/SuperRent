@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_presenter.ManageVehicleController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="490.0" prefWidth="808.0">
+         <children>
+            <Separator layoutX="250.0" layoutY="-5.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="9.0" />
+            <Button fx:id="showButton" layoutX="722.0" layoutY="19.0" mnemonicParsing="false" onAction="#handleShowButtonAction" text="Show" />
+            <Label layoutX="266.0" layoutY="14.0" text="Show Vehicle for sale">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="addButton" disable="true" layoutX="198.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleAddButton" onDragDetected="#handleAddButton" prefHeight="26.0" prefWidth="52.0" text="Add" />
+            <Label alignment="CENTER_RIGHT" layoutX="43.0" layoutY="278.0" text="Date:" />
+            <Label layoutX="14.0" layoutY="14.0" text="Add Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="carRadioButton" layoutX="110.0" layoutY="129.0" mnemonicParsing="false" text="Car" />
+            <RadioButton fx:id="truckRadioButton" layoutX="168.0" layoutY="128.0" mnemonicParsing="false" text="Truck" />
+            <Label alignment="CENTER_RIGHT" layoutX="45.0" layoutY="169.0" text="Type:" />
+            <DatePicker fx:id="startingDateDateBox" disable="true" layoutX="87.0" layoutY="273.0" prefHeight="26.0" prefWidth="163.0" />
+            <VBox fx:id="vehicleForSaleVbox" layoutX="269.0" layoutY="52.0" prefHeight="397.0" prefWidth="441.0" />
+            <Button fx:id="soldButton" layoutX="729.0" layoutY="449.0" mnemonicParsing="false" onAction="#handleSoldButtonAction" prefHeight="26.0" prefWidth="52.0" text="Sold" visible="false" />
+            <Label alignment="CENTER_RIGHT" layoutX="9.0" layoutY="239.0" text="Plate Num:" />
+            <TextField fx:id="plateNumTextField" layoutX="86.0" layoutY="234.0" />
+            <ComboBox fx:id="typeCombobox" layoutX="86.0" layoutY="164.0" prefHeight="26.0" prefWidth="163.0" />
+            <TextField fx:id="brandTextField" layoutX="86.0" layoutY="200.0" />
+            <Label alignment="CENTER_RIGHT" layoutX="38.0" layoutY="205.0" text="Brand:" />
+            <Label fx:id="addingValidator" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="318.0" prefHeight="16.0" prefWidth="172.0" text="Adding succesful" visible="false" />
+            <Label layoutX="17.0" layoutY="91.0" text="Location:" />
+            <ComboBox fx:id="locationCMB" layoutX="85.0" layoutY="86.0" prefHeight="26.0" prefWidth="163.0" />
+            <Label fx:id="soldLabel" alignment="CENTER_RIGHT" layoutX="559.0" layoutY="454.0" prefHeight="16.0" prefWidth="163.0" text="Vehicle has been removed!" visible="false" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view_presenter.LoginController">
+   <children>
+      <ImageView id="im1" disable="true" fitHeight="69.0" fitWidth="159.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@superent.png" />
+         </image>
+      </ImageView>
+      <ImageView id="im2" disable="true" fitHeight="63.0" fitWidth="327.0" layoutX="159.0" pickOnBounds="true">
+         <image>
+            <Image url="@LOGIN.jpg" />
+         </image>
+      </ImageView>
+      <ImageView id="im3" disable="true" fitHeight="114.0" fitWidth="130.0" layoutX="486.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@download.jpg" />
+         </image>
+      </ImageView>
+      <TextField id="user" fx:id="usernameField" focusTraversable="false" layoutX="226.0" layoutY="131.0" promptText="Username" />
+      <Label layoutX="127.0" layoutY="130.0" prefHeight="29.0" prefWidth="83.0" text="Username">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="134.0" layoutY="177.0" prefHeight="29.0" prefWidth="83.0" text="Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <PasswordField id="pass" fx:id="passwordField" focusTraversable="false" layoutX="226.0" layoutY="178.0" promptText="Password" />
+      <Button id="log" fx:id="login_button" layoutX="329.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleloginButtonAction" text="Login" AnchorPane.leftAnchor="329.0" />
+      <Button id="reg" fx:id="register_button" layoutX="249.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleregisterButtonAction" text="Register" />
+      <Button fx:id="clear_button" layoutX="182.0" layoutY="220.0" mnemonicParsing="false" text="Clear" />
+      <Label fx:id="usernameValidator" layoutX="394.0" layoutY="135.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="passwordValidator" layoutX="394.0" layoutY="182.0" prefHeight="17.0" prefWidth="159.0" />
+      <Label fx:id="credentialValidator" layoutX="66.0" layoutY="97.0" prefHeight="17.0" prefWidth="159.0" textFill="#ee158c" />
+   </children>
+</AnchorPane>
